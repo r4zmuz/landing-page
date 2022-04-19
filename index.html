@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Website4Everyone</title>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="payment" viewBox="0 0 16 16" fill="grey">
+        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+        <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+      </symbol>
+      <symbol id="easy" viewBox="0 0 16 16" fill="grey">
+        <path d="M2.873 11.297V4.142H1.699L0 5.379v1.137l1.64-1.18h.06v5.961h1.174Zm3.213-5.09v-.063c0-.618.44-1.169 1.196-1.169.676 0 1.174.44 1.174 1.106 0 .624-.42 1.101-.807 1.526L4.99 10.553v.744h4.78v-.99H6.643v-.069L8.41 8.252c.65-.724 1.237-1.332 1.237-2.27C9.646 4.849 8.723 4 7.308 4c-1.573 0-2.36 1.064-2.36 2.15v.057h1.138Zm6.559 1.883h.786c.823 0 1.374.481 1.379 1.179.01.707-.55 1.216-1.421 1.21-.77-.005-1.326-.419-1.379-.953h-1.095c.042 1.053.938 1.918 2.464 1.918 1.478 0 2.642-.839 2.62-2.144-.02-1.143-.922-1.651-1.551-1.714v-.063c.535-.09 1.347-.66 1.326-1.678-.026-1.053-.933-1.855-2.359-1.845-1.5.005-2.317.88-2.348 1.898h1.116c.032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.504 1.106-1.2 1.106h-.75v.96Z"/>
+      </symbol>
+      <symbol id="chat" viewBox="0 0 16 16" fill="grey">
+        <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1zm0 2.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1zm0 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/>
+      </symbol>
+      <symbol id="seo" viewBox="0 0 16 16" fill="grey">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </symbol>
+      <symbol id="people" viewBox="0 0 16 16" fill="grey">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+      </symbol>
+      <symbol id="domain" viewBox="0 0 16 16" fill="grey">
+        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+      </symbol>
+      <symbol id="shop" viewBox="0 0 16 16" fill="grey">
+        <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+      </symbol>
+      <symbol id="speed" viewBox="0 0 16 16" fill="grey">
+        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+      </symbol>
+    </svg>
+    <section class="border-bottom">
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="assets/Website.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Websites for Everyone</h1>
+            <p class="lead">
+              We create websites and online stores. <br>
+              Website and online store administration made easier <br>
+              More affordable for everyone. <br>
+              What you get if you choose us: <br>
+              <ul>
+              <li>New modern website.</li> 
+              <li>Easy to maintain.</li>
+              <li>Increased sales.</li>
+              <li>Reaching out more to target audience.</li> 
+              <li>Customers can contact easier with business by added integrated quick chat box on the website.</li>
+              <li>More acknowledge about websites and how they work.</li> 
+              <li>Customers can pay for products.</li> 
+              <li>Modern online store.</li> 
+            </ul>
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Book appointment</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About us-->
+    <section class="border-bottom py-5 bg-light">
+      <div class="container">
+        <h2>About Us</h2>
+        <p class="fs-5 text-muted">
+            You have made it to the right place. We own over 10 years of experience in webdesign and -technologies.
+            We are kindly ready to help you in any matters that is related to webpages and online stores.
+            Feel free to contact us!
+        </p>
+      </div>
+    </section>
+    <!--Features-->
+    <section class="border-bottom">
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2">Features</h2>
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#payment"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Payment Options</h4>
+              <p>All the modern payment options.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#easy"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Easy To Use</h4>
+              <p>Easy log in and content creation tool for website.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#chat"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Chat Box</h4>
+              <p>The fastest way to get in touch with customers.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#seo"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">SEO Provided</h4>
+              <p>Appear first in google search results</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#people"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Everybody Can Do IT</h4>
+              <p>Easy to use website administration dashboard.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#domain"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Custom Domain</h4>
+              <p>You can choose your own address for your website.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#shop"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Online Store</h4>
+              <p>Easy to use tool for adding new products in online store.</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speed"></use></svg>
+            <div>
+              <h4 class="fw-bold mb-0">Quick Tutorial</h4>
+              <p>Website administration tutorial included in the bundle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Testimonials-->
+        <section class="bg-light py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Customer testimonials</h2>
+                    <p class="lead mb-0">Our customers love working with us</p>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <!-- Testimonial 1-->
+                        <div class="card mb-4">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
+                                        <div class="small text-muted">- Peeter, Tallinn</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2-->
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
+                                        <div class="small text-muted">- Jaanus, Tartu</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+    <!--Pricing-->
+    <section class="border-bottom pb-4">
+      <div class="pricing-header p-3 pb-md-4 mx-5 py-5 text-center">
+        <h2 class="fw-normal text-start">Pricing</h2>
+        <p class="fs-5 text-muted  text-start">Quickly build an effective website by your own needs, with website4everyone you pay less. We can build website for you with default Wordpress components and utilities with little customization. Or you can choose
+          to have it made by fully tailored approach from us.
+        </p>
+      </div>
+      <main class="mx-5 px-5">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Basic Website</h4>
+              </div>
+              <div class="card-body">
+                <h5 class="text-muted fw-light">Pricing starts at</h5>
+                <h1 class="card-title pricing-card-title">50€<small class="text-muted fw-light">/page</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Based on Wordpress platform</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">+ Online Store</h4>
+              </div>
+              <div class="card-body">
+                <h5 class="text-muted fw-light">Pricing starts at</h5>
+                <h1 class="card-title pricing-card-title">100€<small class="text-muted fw-light">/page</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Based on Ecommerce</li>
+                  <li>10 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Custom Website</h4>
+              </div>
+              <div class="card-body">
+                <h5 class="text-muted fw-light">Pricing starts at</h5>
+                <h1 class="card-title pricing-card-title">500€<small class="text-muted fw-light">/page</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Tailor made website</li>
+                  <li>15 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Compare plans-->
+        <h2 class="display-6 text-center mb-4">Compare plans</h2>
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">Basic</th>
+                <th style="width: 22%;">+ Online</th>
+                <th style="width: 22%;">Custom</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Website</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Online Store</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+            </tbody>
+    
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Storage</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Support 24/7</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Unlimited Users</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Extra security</th>
+                <td></td>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </section>
+    <!--Contact us-->
+    <section class="py-5 border-bottom">
+      <div class="container px-5 my-5">
+          <div class="text-center mb-5">
+              <h2 class="fw-bolder">Get in touch</h2>
+              <p class="lead mb-0">We'd love to hear from you</p>
+          </div>
+          <div class="row gx-5 justify-content-center">
+              <div class="col-lg-6">
+                  
+                  <!-- to get an API token!-->
+                  <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                      <!-- Name input-->
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
+                          <label for="name">Full name</label>
+                          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                      </div>
+                      <!-- Email address input-->
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" data-sb-can-submit="no">
+                          <label for="email">Email address</label>
+                          <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                          <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                      </div>
+                      <!-- Phone number input-->
+                      <div class="form-floating mb-3">
+                          <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" data-sb-can-submit="no">
+                          <label for="phone">Phone number</label>
+                          <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                      </div>
+                      <!-- Message input-->
+                      <div class="form-floating mb-3">
+                          <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
+                          <label for="message">Message</label>
+                          <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                      </div>
+                      <!-- Submit success message-->
+                      <!---->
+                      <!-- This is what your users will see when the form-->
+                      <!-- has successfully submitted-->
+                      <div class="d-none" id="submitSuccessMessage">
+                          <div class="text-center mb-3">
+                              <div class="fw-bolder">Form submission successful!</div>
+                              To activate this form, sign up at
+                              <br>
+                              <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                          </div>
+                      </div>
+                      <!-- Submit error message-->
+                      <!---->
+                      <!-- This is what your users will see when there is-->
+                      <!-- an error submitting the form-->
+                      <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                      <!-- Submit Button-->
+                      <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--Footer-->
+  <section class="bg-light">
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6">
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            </ul>
+          </div>  
+          <div class="col-4 offset-2">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of whats new and exciting from us.</p>
+              <div class="d-flex w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center pt-4">
+          <p>© 2022 Website4Everyone, All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </section>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
